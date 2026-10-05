@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>License Renewal | NEXORA</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../style.css"
+    >
+
+    <style>
+
+        :root {
+            --dark-green: #0A341B;
+            --gold: #c9a45c;
+            --gold-dark: #b18b43;
+            --light-bg: #f7f5f0;
+            --text-dark: #333;
+            --text-muted: #555;
+        }
+
+
+        /* ==============================
+           SERVICE HERO
+        ============================== */
+
+        .service-page-hero {
+            background: var(--dark-green);
+            color: white;
+            padding: 150px 0 100px;
+        }
+
+        .service-page-hero .eyebrow {
+            color: var(--gold);
+        }
+
+        .service-page-hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(42px, 6vw, 72px);
+            max-width: 850px;
+            margin: 20px 0;
+        }
+
+        .service-page-hero h1 span {
+            color: var(--gold);
+        }
+
+        .service-page-hero p {
+            max-width: 750px;
+            color: #d5d9dc;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+
+        /* ==============================
+           CONTENT
+        ============================== */
+
+        .service-content {
+            padding: 100px 0;
+        }
+
+        .service-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .service-main h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--dark-green);
+        }
+
+        .service-main h3 {
+            font-size: 25px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: var(--dark-green);
+        }
+
+        .service-main p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+
+        /* ==============================
+           DOCUMENTS
+        ============================== */
+
+        .documents-list {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+
+        .documents-list li {
+            padding: 16px 20px;
+            margin-bottom: 10px;
+            background: var(--light-bg);
+            border-left: 3px solid var(--gold);
+            color: var(--text-dark);
+        }
+
+        .documents-list li::before {
+            content: "✓";
+            color: var(--gold-dark);
+            font-weight: 700;
+            margin-right: 12px;
+        }
+
+
+        /* ==============================
+           PROCESS
+        ============================== */
+
+        .process-list {
+            counter-reset: process;
+            padding: 0;
+            list-style: none;
+        }
+
+        .process-list li {
+            counter-increment: process;
+            position: relative;
+            padding: 20px 20px 20px 70px;
+            border-bottom: 1px solid #ddd;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .process-list li::before {
+            content: counter(process);
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--dark-green);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+
+        /* ==============================
+           SIDEBAR
+        ============================== */
+
+        .service-sidebar {
+            background: var(--dark-green);
+            color: white;
+            padding: 35px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .service-sidebar h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .service-sidebar p {
+            color: #d5d9dc;
+            line-height: 1.7;
+        }
+
+        .service-sidebar .btn {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+
+        /* ==============================
+           BUTTONS
+        ============================== */
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--dark-green);
+            border: 1px solid var(--gold);
+        }
+
+        .btn-gold:hover {
+            background: #dfbd73;
+            border-color: #dfbd73;
+            color: var(--dark-green);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--dark-green);
+        }
+
+
+        /* ==============================
+           SERVICE NOTE
+        ============================== */
+
+        .service-note {
+            margin-top: 40px;
+            padding: 25px;
+            background: var(--light-bg);
+            border-left: 4px solid var(--gold);
+        }
+
+        .service-note p {
+            margin: 0;
+        }
+
+
+        /* ==============================
+           BACK LINK
+        ============================== */
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #dfbd73;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background: var(--dark-green);
+            color: white;
+        }
+
+        .footer-brand .logo-main,
+        .footer-brand .logo-sub {
+            color: white;
+        }
+
+        .footer-brand p {
+            color: #d5d9dc;
+        }
+
+        .footer-column h4 {
+            color: var(--gold);
+        }
+
+        .footer-column a,
+        .footer-column p {
+            color: #d5d9dc;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-bottom p {
+            color: #bfc5c1;
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            .service-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .service-sidebar {
+                position: static;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     HEADER
+============================== -->
+
+<header class="navbar">
+
+    <div class="container nav-container">
+
+        <a href="/" class="logo">
+
+            <span class="logo-main">
+                NEXORA
+            </span>
+
+            <span class="logo-sub">
+                BUSINESS &amp; GOVERNMENT SERVICES
+            </span>
+
+        </a>
+
+
+        <nav class="nav-menu">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/#about">
+                About
+            </a>
+
+            <a href="/#services">
+                Services
+            </a>
+
+            <a href="/#process">
+                How It Works
+            </a>
+
+            <a href="/#faq">
+                FAQ
+            </a>
+
+            <a href="/#contact">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <a
+            href="/#contact"
+            class="nav-button"
+        >
+            Get Consultation
+        </a>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+    <!-- ==============================
+         HERO
+    ============================== -->
+
+    <section class="service-page-hero">
+
+        <div class="container">
+
+            <a
+                href="/#services"
+                class="back-link"
+            >
+                ← Back to Services
+            </a>
+
+
+            <p class="eyebrow">
+                PRO SERVICES
+            </p>
+
+
+            <h1>
+                License
+                <span>Renewal</span>
+            </h1>
+
+
+            <p>
+                Keep your business licensing up to date with
+                assistance for renewal applications and related
+                procedures.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==============================
+         CONTENT
+    ============================== -->
+
+    <section class="service-content">
+
+        <div class="container service-layout">
+
+
+            <!-- MAIN CONTENT -->
+
+            <div class="service-main">
+
+                <h2>
+                    License Renewal
+                </h2>
+
+
+                <p>
+                    Business licenses generally need to be renewed
+                    according to the requirements and timelines of
+                    the relevant authority. Our team assists with
+                    the renewal process, helping organise the
+                    required documents and coordinate the applicable
+                    procedures. We also help businesses understand
+                    what information may be required before starting
+                    the renewal.
+                </p>
+
+
+
+                <h3>
+                    Documents Required
+                </h3>
+
+
+                <ul class="documents-list">
+
+                    <li>
+                        Passport copy of the applicant/shareholder
+                    </li>
+
+                    <li>
+                        Passport-size photograph
+                    </li>
+
+                    <li>
+                        Emirates ID, where applicable
+                    </li>
+
+                    <li>
+                        UAE visa copy, where applicable
+                    </li>
+
+                    <li>
+                        Existing trade or company licence
+                    </li>
+
+                    <li>
+                        Business activity details
+                    </li>
+
+                    <li>
+                        Contact and address information
+                    </li>
+
+                    <li>
+                        Additional documents required by the relevant authority
+                    </li>
+
+                </ul>
+
+
+
+                <h3>
+                    How the Process Works
+                </h3>
+
+
+                <ol class="process-list">
+
+                    <li>
+                        Discuss your existing licence and renewal
+                        requirements.
+                    </li>
+
+                    <li>
+                        Review the current licence details and
+                        applicable renewal requirements.
+                    </li>
+
+                    <li>
+                        Confirm the required documents and
+                        information.
+                    </li>
+
+                    <li>
+                        Prepare and submit the renewal application.
+                    </li>
+
+                    <li>
+                        Complete the applicable government
+                        approvals and procedures.
+                    </li>
+
+                    <li>
+                        Complete the renewal and receive the
+                        updated licence documentation.
+                    </li>
+
+                </ol>
+
+
+
+                <h3>
+                    Important Information
+                </h3>
+
+
+                <div class="service-note">
+
+                    <p>
+                        Renewal requirements, fees, deadlines,
+                        penalties and supporting documents can vary
+                        depending on the relevant licensing authority,
+                        business activity and company structure.
+                        The applicable requirements should be
+                        confirmed before submitting a renewal
+                        application.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==============================
+                 SIDEBAR
+            ============================== -->
+
+            <aside class="service-sidebar">
+
+                <h3>
+                    Need Assistance?
+                </h3>
+
+
+                <p>
+                    Tell us about your business requirements and
+                    our team can guide you through the license
+                    renewal process.
+                </p>
+
+
+                <a
+                    href="/#contact"
+                    class="btn btn-gold"
+                >
+                    Get Consultation
+                </a>
+
+
+                <a
+                    href="https://wa.me/971523554213"
+                    class="btn btn-outline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    WhatsApp Us
+                </a>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="/" class="logo">
+
+                <span class="logo-main">
+                    NEXORA
+                </span>
+
+                <span class="logo-sub">
+                    BUSINESS &amp; GOVERNMENT SERVICES
+                </span>
+
+            </a>
+
+
+            <p>
+                Professional UAE business, government and
+                immigration services.
+            </p>
+
+        </div>
+
+
+
+        <!-- SERVICES -->
+
+        <div class="footer-column">
+
+            <h4>
+                Services
+            </h4>
+
+
+            <a href="/#business">
+                Business Setup
+            </a>
+
+            <a href="/#pro">
+                PRO Services
+            </a>
+
+            <a href="/#visa">
+                Visa Services
+            </a>
+
+            <a href="/#documents">
+                Document Services
+            </a>
+
+        </div>
+
+
+
+        <!-- COMPANY -->
+
+        <div class="footer-column">
+
+            <h4>
+                Company
+            </h4>
+
+
+            <a href="/#about">
+                About Us
+            </a>
+
+            <a href="/#process">
+                How It Works
+            </a>
+
+            <a href="/#faq">
+                FAQ
+            </a>
+
+            <a href="/#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+            <h4>
+                Contact
+            </h4>
+
+
+            <p>
+                Dubai, UAE
+            </p>
+
+            <p>
+                +971 52 355 4213
+            </p>
+
+            <p>
+                proamerdubai@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            <p>
+                © 2026 NEXORA. 
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

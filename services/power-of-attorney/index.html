@@ -1,0 +1,597 @@
+<!DOCTYPE html> <html lang="en"> <head>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Power of Attorney | NEXORA</title>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="../../style.css"
+>
+
+<style>
+
+    :root {
+        --nexora-green: #0A341B;
+        --nexora-gold: #c9a45c;
+        --nexora-gold-dark: #b18b43;
+        --nexora-light: #f7f5f0;
+        --nexora-text: #333;
+    }
+
+    .service-page-hero {
+        background: var(--nexora-green);
+        color: white;
+        padding: 150px 0 100px;
+    }
+
+    .service-page-hero .eyebrow {
+        color: var(--nexora-gold);
+    }
+
+    .service-page-hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(42px, 6vw, 72px);
+        max-width: 850px;
+        margin: 20px 0;
+    }
+
+    .service-page-hero h1 span {
+        color: var(--nexora-gold);
+    }
+
+    .service-page-hero p {
+        max-width: 750px;
+        color: #d5d9dc;
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .service-content {
+        padding: 100px 0;
+    }
+
+    .service-layout {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 70px;
+        align-items: start;
+    }
+
+    .service-main h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .service-main h3 {
+        font-size: 25px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .service-main p {
+        color: #555;
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    .documents-list {
+        list-style: none;
+        padding: 0;
+        margin: 25px 0;
+    }
+
+    .documents-list li {
+        padding: 16px 20px;
+        margin-bottom: 10px;
+        background: var(--nexora-light);
+        border-left: 3px solid var(--nexora-gold);
+        color: var(--nexora-text);
+    }
+
+    .documents-list li::before {
+        content: "✓";
+        color: var(--nexora-gold-dark);
+        font-weight: 700;
+        margin-right: 12px;
+    }
+
+    .process-list {
+        counter-reset: process;
+        padding: 0;
+        list-style: none;
+    }
+
+    .process-list li {
+        counter-increment: process;
+        position: relative;
+        padding: 20px 20px 20px 70px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .process-list li::before {
+        content: counter(process);
+        position: absolute;
+        left: 0;
+        top: 15px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--nexora-green);
+        color: var(--nexora-gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+
+    .service-sidebar {
+        background: var(--nexora-green);
+        color: white;
+        padding: 35px;
+        position: sticky;
+        top: 100px;
+    }
+
+    .service-sidebar h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .service-sidebar p {
+        color: #d5d9dc;
+        line-height: 1.7;
+    }
+
+    .service-sidebar .btn {
+        display: block;
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .service-note {
+        margin-top: 40px;
+        padding: 25px;
+        background: var(--nexora-light);
+        border-left: 4px solid var(--nexora-gold);
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-bottom: 30px;
+        color: var(--nexora-gold);
+        text-decoration: none;
+    }
+
+    .back-link:hover {
+        color: #e0bd78;
+    }
+
+    .btn-gold {
+        background: var(--nexora-gold);
+        color: var(--nexora-green);
+        border-color: var(--nexora-gold);
+    }
+
+    .btn-gold:hover {
+        background: #dfba70;
+        border-color: #dfba70;
+    }
+
+    .btn-outline {
+        color: white;
+        border-color: var(--nexora-gold);
+    }
+
+    .btn-outline:hover {
+        background: var(--nexora-gold);
+        color: var(--nexora-green);
+    }
+
+    footer {
+        background: var(--nexora-green);
+        color: white;
+    }
+
+    footer p,
+    footer a {
+        color: #d5d9dc;
+    }
+
+    footer a:hover {
+        color: var(--nexora-gold);
+    }
+
+    footer h4 {
+        color: white;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    @media (max-width: 900px) {
+
+        .service-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .service-sidebar {
+            position: static;
+        }
+
+    }
+
+    @media (max-width: 600px) {
+
+        .service-page-hero {
+            padding: 120px 0 70px;
+        }
+
+        .service-content {
+            padding: 70px 0;
+        }
+
+        .service-main h2 {
+            font-size: 34px;
+        }
+
+        .service-sidebar {
+            padding: 28px;
+        }
+
+    }
+
+</style>
+
+</head> <body> <header class="navbar">
+<div class="container nav-container">
+
+    <a href="/" class="logo">
+
+        <span class="logo-main">
+            NEXORA
+        </span>
+
+        <span class="logo-sub">
+            BUSINESS & GOVERNMENT SERVICES
+        </span>
+
+    </a>
+
+    <nav class="nav-menu">
+
+        <a href="/">Home</a>
+        <a href="/#about">About</a>
+        <a href="/#services">Services</a>
+        <a href="/#process">How It Works</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#contact">Contact</a>
+
+    </nav>
+
+    <a
+        href="/#contact"
+        class="nav-button"
+    >
+        Get Consultation
+    </a>
+
+</div>
+
+</header> <main>
+<!-- HERO -->
+
+<section class="service-page-hero">
+
+    <div class="container">
+
+        <a
+            href="/#services"
+            class="back-link"
+        >
+            ← Back to Services
+        </a>
+
+        <p class="eyebrow">
+            DOCUMENT SERVICES
+        </p>
+
+        <h1>
+            Power of
+            <span>Attorney</span>
+        </h1>
+
+        <p>
+            Assistance with preparing and processing Power of
+            Attorney documents for personal and business
+            purposes in the UAE.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<section class="service-content">
+
+    <div class="container service-layout">
+
+        <div class="service-main">
+
+            <h2>
+                Power of Attorney
+            </h2>
+
+            <p>
+                A Power of Attorney allows an authorised person
+                to act on behalf of another person within the
+                scope specified in the document. Requirements
+                and procedures can vary depending on the purpose
+                and type of Power of Attorney. NEXORA assists
+                with document preparation, coordination and the
+                applicable notarisation or authentication
+                procedures.
+            </p>
+
+
+            <h3>
+                Documents Required
+            </h3>
+
+            <ul class="documents-list">
+
+                <li>
+                    Passport copy of the person granting the Power of Attorney
+                </li>
+
+                <li>
+                    Passport copy of the authorised representative, where applicable
+                </li>
+
+                <li>
+                    Emirates ID, where applicable
+                </li>
+
+                <li>
+                    UAE visa copy, where applicable
+                </li>
+
+                <li>
+                    Details of the powers and authorities to be granted
+                </li>
+
+                <li>
+                    Supporting company or business documents, where applicable
+                </li>
+
+                <li>
+                    Contact and address information
+                </li>
+
+            </ul>
+
+
+            <h3>
+                How the Process Works
+            </h3>
+
+            <ol class="process-list">
+
+                <li>
+                    Discuss the purpose and scope of the Power of Attorney.
+                </li>
+
+                <li>
+                    Review the required information and supporting documents.
+                </li>
+
+                <li>
+                    Prepare or coordinate the Power of Attorney document.
+                </li>
+
+                <li>
+                    Arrange the applicable notarisation or authentication procedure.
+                </li>
+
+                <li>
+                    Submit the documents and complete the required formalities.
+                </li>
+
+                <li>
+                    Receive the completed document and complete any related procedures.
+                </li>
+
+            </ol>
+
+
+            <h3>
+                Important Information
+            </h3>
+
+            <div class="service-note">
+
+                <p>
+                    Requirements can vary depending on the type
+                    and purpose of the Power of Attorney, the
+                    parties involved, document language and the
+                    relevant UAE authority. The final document
+                    requirements and procedure should be confirmed
+                    before submission.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="service-sidebar">
+
+            <h3>
+                Need Assistance?
+            </h3>
+
+            <p>
+                Tell us about your Power of Attorney
+                requirements and our team can guide you
+                through the next steps.
+            </p>
+
+            <a
+                href="/#contact"
+                class="btn btn-gold"
+            >
+                Get Consultation
+            </a>
+
+            <a
+                href="https://wa.me/971523554213"
+                class="btn btn-outline"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp Us
+            </a>
+
+        </aside>
+
+    </div>
+
+</section>
+
+</main> <footer>
+<div class="container footer-grid">
+
+    <div class="footer-brand">
+
+        <a href="/" class="logo">
+
+            <span class="logo-main">
+                NEXORA
+            </span>
+
+            <span class="logo-sub">
+                BUSINESS & GOVERNMENT SERVICES
+            </span>
+
+        </a>
+
+        <p>
+            Professional UAE business, government and
+            immigration services.
+        </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>Services</h4>
+
+        <a href="/#business">
+            Business Setup
+        </a>
+
+        <a href="/#pro">
+            PRO Services
+        </a>
+
+        <a href="/#visa">
+            Visa Services
+        </a>
+
+        <a href="/#documents">
+            Document Services
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>Company</h4>
+
+        <a href="/#about">
+            About Us
+        </a>
+
+        <a href="/#process">
+            How It Works
+        </a>
+
+        <a href="/#faq">
+            FAQ
+        </a>
+
+        <a href="/#contact">
+            Contact
+        </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h4>Contact</h4>
+
+        <p>
+            Dubai, UAE
+        </p>
+
+        <p>
+            <a href="tel:+971523554213">
+                +971 52 355 4213
+            </a>
+        </p>
+
+        <p>
+            <a href="mailto:proamerdubai@gmail.com">
+                proamerdubai@gmail.com
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+    <div class="container">
+
+        <p>
+            © 2026 NEXORA.
+            All rights reserved.
+        </p>
+
+    </div>
+
+</div>
+
+</footer> </body> </html>
